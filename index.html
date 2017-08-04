@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SSSP | Practia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/practia.css" media="screen,projection" />
+    <script src="http://10.1.0.242:8080/target/target-script-min.js"></script>
+    <style>
+
+    </style>
+    <!-- endinject -->
+</head>
+
+<body onkeydown="Main.keyDown();">
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper z-depth-1"> <img src="./images/logo.png" alt="Practia" class="responsive-img">
+                    <div class="center">
+                        <h4>Sube tu foto en <a>practiapinta.me</a></h4>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col s12">
+                <div class="slider">
+                    <ul class="slides">
+                        <li> <img src="./images/demo/portrait.jpg">
+                            <div class="caption center-align">
+                                <h5>Original</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/portrait_mosaic.jpg">
+                            <div class="caption center-align">
+                                <h5>Mosaic</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/portrait_candy.jpg">
+                            <div class="caption center-align">
+                                <h5>Candy</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/portrait_udnie.jpg">
+                            <div class="caption center-align">
+                                <h5>Udnie</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/portrait_starry-night.jpg">
+                            <div class="caption center-align">
+                                <h5>Starry night</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/portrait_van-gogh.jpg">
+                            <div class="caption center-align">
+                                <h5>van Gogh</h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="slider landscape">
+                    <ul class="slides landscape">
+                        <li> <img src="./images/demo/ny.jpg">
+                            <div class="caption center-align">
+                                <h5>Original</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/ny_mosaic.jpg">
+                            <div class="caption center-align">
+                                <h5>Mosaic</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/ny_candy.jpg">
+                            <div class="caption center-align">
+                                <h5>Candy</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/ny_udnie.jpg">
+                            <div class="caption center-align">
+                                <h5>Udnie</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/ny_starry-night.jpg">
+                            <div class="caption center-align">
+                                <h5>Starry night</h5>
+                            </div>
+                        </li>
+                        <li> <img src="./images/demo/ny_van-gogh.jpg">
+                            <div class="caption center-align">
+                                <h5>van Gogh</h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="modal_info" class="modal">
+            <div class="modal-content">
+                <h4>Información</h4>
+                <hr>
+                <div id="infoBox"></div>
+            </div>
+        </div>
+
+
+
+
+
+    <div style="border:none; width:0px;height:0px;">    
+        <!-- Plugins -->
+        <object id="pluginPlayer" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+
+        <!-- Get audion information like current volume -->
+        <object id="pluginAudio" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+
+        <!-- Download Plugin for 2013 version -->
+        <object id="pluginDL" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+
+        <object id="pluginFilesystem" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+        <object id="FilesystemPlugin" classid="clsid:SAMSUNG-INFOLINK-FILESYSTEM" style="border:none; width:0px;height:0px;"></object>
+
+        <object id="pluginNetwork" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+
+        <object id="pluginTime" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+        <object id="pluginObjectTime" classid="clsid:SAMSUNG-INFOLINK-TIME" style="border:none; width:0px;height:0px;"></object>
+
+        <object id="WindowPlugin" classid="clsid:SAMSUNG-INFOLINK-SEF" style="visibility:hidden;"></object>
+
+        <object id="pluginObjectTVMW" classid="clsid:SAMSUNG-INFOLINK-TVMW" style="opacity:0.0; width:0px; height:0px;"></object>
+        <object id="pluginObjectNNavi" classid="clsid:SAMSUNG-INFOLINK-NNAVI" style="opacity:0.0; width:0px; height:0px;"></object>
+
+        <object id="pluginNNavi" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+        <object id="pluginObjectTV" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+        <object id="pluginLFDSef" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+        <object id="pluginObjectAppCommon" classid="clsid:SAMSUNG-INFOLINK-APPCOMMON" style="opacity: 0.0; background-color: #000; width: 0px; height: 0px;"></object>
+
+        <!-- System info DEF object -->
+        <object id="pluginCPUobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
+        <object id="pluginRAMobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
+        <object id="pluginRBTobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
+        <object id="pluginUPTobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
+    </div>
+    </main>
+    <footer> </footer>
+    <!-- inject:css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script src="http://www.hivemq.com/demos/websocket-client/js/mqttws31.js"></script>
+    <script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/Plugin.js'></script>
+    <script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/Widget.js'></script>
+    <script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/TVKeyValue.js'></script>
+    <!--script type="text/javascript" language='javascript' src="$MANAGER_WIDGET/Common/webapi/1.0/deviceapis.js"></script-->
+    <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/webapi/1.0/webapis.js"></script>
+    <script type="text/javascript" src="./js/mqtt.js"></script>
+    <script type="text/javascript" src="./js/sssp.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slider();
+            Main.onLoad();
+        });
+    </script>
+    <!-- endinject -->
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <widget>
+        <ThumbIcon>image/picasa_106.png</ThumbIcon>
+        <BigThumbIcon>image/picasa_115.png</BigThumbIcon>
+        <ListIcon>image/picasa_85.png</ListIcon>
+        <BigListIcon>image/picasa_95.png</BigListIcon>
+        <previewjs>PreviewHelloWorld</previewjs>
+        <cpname>Samsung</cpname>
+        <cplogo>Resource/image/settings_logo.png</cplogo>
+        <cpauthjs></cpauthjs>
+        <ver>0.930</ver>
+        <mgrver>1.000</mgrver>
+        <fullwidget>n</fullwidget>
+        <srcctl>n</srcctl>
+        <ticker>n</ticker>
+        <childlock>n</childlock>
+        <audiomute>n</audiomute>
+        <videomute>n</videomute>
+        <dcont>y</dcont>
+        <network>y</network>
+        <hubsite>n</hubsite>
+        <widgetname>HelloWorld</widgetname>
+        <description>Welcome!</description>
+        <width>960</width>
+        <height>540</height>
+        <author>
+            <name>Samsung</name>
+            <email></email>
+            <link>http://acme-widget.example.com</link>
+            <organization>Acme Examples, Inc.</organization>
+         </author>
+    </widget>

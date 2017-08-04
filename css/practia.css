@@ -1,0 +1,66 @@
+/* Reset */
+body {
+  height: 100vh;
+  background-color: transparent;
+}
+
+header nav {
+  height: 66px;
+  background-color: #333333;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+p {
+  text-align: justify;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0
+}
+
+.slider {
+  height: 800px !important;
+}
+
+.slider .slides {
+  height: 760px !important;
+  background-color: transparent !important;
+}
+
+.slider .slides li img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: 0;
+}
+h5 {
+    background-color: rgba(0,0,0, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    color: white;
+}
+
+.slider .slides li .caption {
+    top: 5%;
+    left: 40%;
+    width: 20%;
+}
+.slider .indicators .indicator-item.active {
+    background-color: #CE2021;
+}
+.nav-wrapper div {            
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+nav a {
+    color: #039be5;
+}
+
+.log {
+  color: green;
+}
