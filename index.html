@@ -8,12 +8,18 @@
     <link type="text/css" rel="stylesheet" href="./css/practia.css" media="screen,projection" />
     <script src="http://10.1.0.242:8080/target/target-script-min.js"></script>
     <style>
-
+        #myCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
     </style>
     <!-- endinject -->
 </head>
 
 <body onkeydown="Main.keyDown();">
+    <canvas id="myCanvas" width="1080" height="1920" class="hide"></canvas>
     <header>
         <div class="navbar-fixed">
             <nav>
@@ -110,45 +116,18 @@
                 <div id="infoBox"></div>
             </div>
         </div>
-
-
-
-
-
-    <div style="border:none; width:0px;height:0px;">    
-        <!-- Plugins -->
-        <object id="pluginPlayer" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-
-        <!-- Get audion information like current volume -->
-        <object id="pluginAudio" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-
-        <!-- Download Plugin for 2013 version -->
-        <object id="pluginDL" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-
-        <object id="pluginFilesystem" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-        <object id="FilesystemPlugin" classid="clsid:SAMSUNG-INFOLINK-FILESYSTEM" style="border:none; width:0px;height:0px;"></object>
-
-        <object id="pluginNetwork" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-
-        <object id="pluginTime" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-        <object id="pluginObjectTime" classid="clsid:SAMSUNG-INFOLINK-TIME" style="border:none; width:0px;height:0px;"></object>
-
-        <object id="WindowPlugin" classid="clsid:SAMSUNG-INFOLINK-SEF" style="visibility:hidden;"></object>
-
-        <object id="pluginObjectTVMW" classid="clsid:SAMSUNG-INFOLINK-TVMW" style="opacity:0.0; width:0px; height:0px;"></object>
-        <object id="pluginObjectNNavi" classid="clsid:SAMSUNG-INFOLINK-NNAVI" style="opacity:0.0; width:0px; height:0px;"></object>
-
-        <object id="pluginNNavi" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-        <object id="pluginObjectTV" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-        <object id="pluginLFDSef" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
-        <object id="pluginObjectAppCommon" classid="clsid:SAMSUNG-INFOLINK-APPCOMMON" style="opacity: 0.0; background-color: #000; width: 0px; height: 0px;"></object>
-
-        <!-- System info DEF object -->
-        <object id="pluginCPUobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
-        <object id="pluginRAMobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
-        <object id="pluginRBTobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
-        <object id="pluginUPTobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>
-    </div>
+        <div style="border:none; width:0px;height:0px;">
+            <!-- Plugins --><object id="pluginPlayer" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+            <!-- Get audion information like current volume --><object id="pluginAudio" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>
+            <!-- Download Plugin for 2013 version --><object id="pluginDL" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>            <object id="pluginFilesystem" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>            <object id="FilesystemPlugin" classid="clsid:SAMSUNG-INFOLINK-FILESYSTEM" style="border:none; width:0px;height:0px;"></object>            <object id="pluginNetwork" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>            <object id="pluginTime" classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object>            <object id="pluginObjectTime" classid="clsid:SAMSUNG-INFOLINK-TIME" style="border:none; width:0px;height:0px;"></object>            <object id="WindowPlugin" classid="clsid:SAMSUNG-INFOLINK-SEF" style="visibility:hidden;"></object> <object id="pluginObjectTVMW"
+                classid="clsid:SAMSUNG-INFOLINK-TVMW" style="opacity:0.0; width:0px; height:0px;"></object> <object id="pluginObjectNNavi"
+                classid="clsid:SAMSUNG-INFOLINK-NNAVI" style="opacity:0.0; width:0px; height:0px;"></object> <object id="pluginNNavi"
+                classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object> <object id="pluginObjectTV"
+                classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object> <object id="pluginLFDSef"
+                classid="clsid:SAMSUNG-INFOLINK-SEF" style="border:none; width:0px;height:0px;"></object> <object id="pluginObjectAppCommon"
+                classid="clsid:SAMSUNG-INFOLINK-APPCOMMON" style="opacity: 0.0; background-color: #000; width: 0px; height: 0px;"></object>
+            <!-- System info DEF object --><object id="pluginCPUobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object> <object id="pluginRAMobjectSef"
+                classid="clsid:SAMSUNG-INFOLINK-SEF"></object> <object id="pluginRBTobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object>            <object id="pluginUPTobjectSef" classid="clsid:SAMSUNG-INFOLINK-SEF"></object> </div>
     </main>
     <footer> </footer>
     <!-- inject:css -->
@@ -160,14 +139,113 @@
     <script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/TVKeyValue.js'></script>
     <!--script type="text/javascript" language='javascript' src="$MANAGER_WIDGET/Common/webapi/1.0/deviceapis.js"></script-->
     <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/webapi/1.0/webapis.js"></script>
-    <script type="text/javascript" src="./js/mqtt.js"></script>
     <script type="text/javascript" src="./js/sssp.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/mqtt.js"></script>
     <script>
         $(document).ready(function () {
             $('.slider').slider();
             Main.onLoad();
+
+            client.connect(options);
+
+            setTimeout(function () {
+                var startTime = (new Date()).getTime();
+                animate(myFace, canvas, context, startTime);
+                $('#myCanvas').removeClass('hide');
+            }, 5000);
         });
+
+    </script>
+    <script>
+        window.requestAnimFrame = (function (callback) {
+            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                };
+        })();
+
+        function drawFace(myFace, context) {
+            if (!people) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                return;
+            }
+            context.beginPath();
+            context.arc(myFace.x, myFace.y, myFace.width, 0, 2 * Math.PI, false);
+            context.fillStyle = color;
+            context.fill();
+            context.lineWidth = myFace.borderWidth;
+            context.strokeStyle = '#003300';
+
+            if (people) {
+                // draw the eyes
+                context.beginPath();
+                context.arc(myFace.x - 20, myFace.y - 20, 6, 0, 2 * Math.PI, false);
+                context.arc(myFace.x + 20, myFace.y - 20, 6, 0, 2 * Math.PI, false);
+                context.fillStyle = "black";
+                context.fill();
+            }
+            if (emotion == 'joy') {
+                // draw the mouth
+                context.beginPath();
+                context.arc(myFace.x, myFace.y, 30, 0, Math.PI, false);
+            }
+            else if (emotion == 'sadness') {
+                // draw the mouth
+                context.beginPath();
+                context.arc(myFace.x, myFace.y + 30, 30, 0, Math.PI, true);
+            }
+            else if (emotion == 'neutro') {
+                // draw the mouth
+                context.beginPath();
+                context.moveTo(myFace.x - 30, myFace.y + 20);
+                context.lineTo(myFace.x + 30, myFace.y + 20);
+            }
+
+            context.stroke();
+        }
+        function animate(myFace, canvas, context, startTime) {
+            // update
+            var time = (new Date()).getTime() - startTime;
+
+            // pixels / second^2
+            var gravity = 100;
+
+            myFace.y = 0.5 * gravity * Math.pow(time / 1000, 2);
+
+            if (myFace.y > canvas.height * 1.1) {
+                myFace.y = canvas.height - myFace.width - myFace.borderWidth / 2;
+                myFace.y = - myFace.width - myFace.borderWidth / 2;
+                startTime = (new Date()).getTime();
+                //console.log('reset');
+            }
+            lastTime = time;
+
+            // clear
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            // draw
+            drawFace(myFace, context);
+
+            // request new frame
+            requestAnimFrame(function () {
+                animate(myFace, canvas, context, startTime);
+            });
+        }
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        var color = 'green';
+        var people = true;
+        var emotion = 'neutro';
+
+        var myFace = {
+            x: 100,
+            y: -12,
+            width: 50,
+            borderWidth: 0
+        };
+
+        drawFace(myFace, context);
     </script>
     <!-- endinject -->
 </body>

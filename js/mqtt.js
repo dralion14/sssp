@@ -8,7 +8,7 @@ client.onConnectionLost = function (responseObject) {
     client.reconnect(2000);
 };
 
-client.reconnect = function(time) {
+client.reconnect = function (time) {
     window.setTimeout(function () {
         client.connect(options);
     }, time);
@@ -21,8 +21,28 @@ client.onMessageArrived = function (message) {
 
     if (message.payloadString == 'Reload') {
         Main.reload();
-    } else if(message.payloadString == 'Hello'){
+    } else if (message.payloadString == 'Hello') {
         Main.showDeviceInformations();
+    }
+    else if (message.payloadString == 'People') {
+        people = true;
+        emotion = 'neutro';
+    }
+    else if (message.payloadString == 'NoPeople') {
+        people = false;
+        emotion = 'neutro';
+    }
+    else if (message.payloadString == 'Joy') {
+        emotion = 'joy';
+    }
+    else if (message.payloadString == 'Angry') {
+        emotion = 'angry';
+    }
+    else if (message.payloadString == 'Sadness') {
+        emotion = 'sadness';
+    }
+    else if (message.payloadString == 'Neutro') {
+        emotion = 'neutro';
     }
 };
 
@@ -31,8 +51,10 @@ var options = {
     timeout: 3,
     //Gets Called if the connection has sucessfully been established
     onSuccess: function () {
-        log("Connected");
+        //log('sssp/' + Main.getDUID());
+        client.subscribe('sssp/' + Main.getDUID(), { qos: 2 });
         client.subscribe('sssp/tv', { qos: 2 });
+        log("Connected");
     },
     //Gets Called if the connection could not be established
     onFailure: function (message) {

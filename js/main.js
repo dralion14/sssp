@@ -4,13 +4,13 @@ var Main = {
         /**
          * JavaScript code Here!
          */
-        client.connect(options);
         this.init();
+        log('Main.onLoad');
     },
     reload: function(){
         window.setTimeout(function () {
             location.reload(true);
-        }, 1000);
+        }, 500);
     },
     keyDown: function() {            // Key handler
         var keyCode = event.keyCode;
@@ -18,6 +18,14 @@ var Main = {
         log("Key code: " + keyCode);
 
         switch (keyCode) {
+            
+            case 31:
+                this.showDeviceInformations();
+                break;
+            case 84:
+                this.reload();
+                break;
+                
             case tvKey.KEY_LEFT:
                 moverSlider(-1);
                 break;
@@ -31,11 +39,24 @@ var Main = {
             case tvKey.KEY_ENTER:
                 break;
 
-            case 31:
-                this.showDeviceInformations();
-                break;
             case 108:
-                this.reload();
+                color = 'red';
+                emotion = 'neutro';
+                break;
+            case 20:
+                color = 'green';
+                emotion = 'neutro';
+                break;
+            case 21:
+                color = 'yellow';
+                emotion = 'joy';
+                break;
+            case 22:
+                color = 'blue';
+                emotion = 'sadness';
+                break;
+            case 27:
+                $('#myCanvas').toggleClass('hide');
                 break;
 
             case tvKey.KEY_PLAY:
@@ -90,8 +111,7 @@ var Main = {
         this.fileSystemObj = new FileSystem();
         this.oldSystemObj = document.getElementById('FilesystemPlugin');
         this.pluginNNavi.Execute("SetBannerState", 8);
-        log('init done');
-        return true
+        return true;
     },
     getMacAddress: function() {
         return this.pluginNetwork.Execute("GetMAC", "1")
